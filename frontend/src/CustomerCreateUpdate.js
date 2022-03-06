@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import CustomersService from "./CustomerService";
 
-const customerService = new CustomersService();
+const customersService = new CustomersService();
 
 class CustomerCreateUpdate extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
