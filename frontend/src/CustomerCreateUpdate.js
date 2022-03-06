@@ -4,7 +4,6 @@ import CustomersService from "./CustomerService";
 const customersService = new CustomersService();
 
 class CustomerCreateUpdate extends Component {
-
     constructor(props) {
         super(props);
 
@@ -12,10 +11,9 @@ class CustomerCreateUpdate extends Component {
     }
 
     componentDidMount(){
-        const { match: { params } } =  this.props;
-        if(params  &&  params.pk)
+        if(this.props  &&  this.props.pk)
         {
-            customersService.getCustomer(params.pk).then((c)=>{
+            customersService.getCustomer(this.props.pk).then((c)=>{
                 this.refs.firstName.value  =  c.first_name;
                 this.refs.lastName.value  =  c.last_name;
                 this.refs.email.value  =  c.email;
